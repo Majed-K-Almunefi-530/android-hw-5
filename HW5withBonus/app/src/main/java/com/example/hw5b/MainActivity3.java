@@ -38,17 +38,12 @@ public class MainActivity3 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phone = phone1.getText().toString();
-                //Intent back = new Intent(MainActivity3.this,MainActivity2.class);
+
+                Intent back = new Intent(MainActivity3.this,MainActivity2.class);
                 //
-                // startActivity(back);
-                //Intent intent = new Intent(Intent.ACTION_SEND);
-                //String[] recipients = {"munefi04@gmail.com"};
-                //intent.putExtra(Intent.EXTRA_EMAIL,recipients);
-                //intent.setPackage("com.google.android.gm");
-                //startActivity(Intent.createChooser(intent,"send email"));
-                Intent callintent = new Intent(Intent.ACTION_DIAL);
-                callintent.setData(Uri.parse("tel:"+phone));
+                 startActivity(back);
+
+
 
             }
 
@@ -89,12 +84,12 @@ public class MainActivity3 extends AppCompatActivity {
         mailme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              String mailone = mail.getText().toString();
-              Intent intet = new Intent(Intent.ACTION_SEND);
-              intet.setType("message/rfc822");
-              intet.putExtra(Intent.EXTRA_EMAIL,new String[]{mailone});
-              intet.setPackage("com.google.android.gm");
-              startActivity(intet);
+                String mailone = mail.getText().toString();
+                Intent intet = new Intent(Intent.ACTION_SEND);
+                intet.setType("message/rfc822");
+                intet.putExtra(Intent.EXTRA_EMAIL,new String[]{mailone});
+                intet.setPackage("com.google.android.gm");
+                startActivity(intet);
 
             }
         });
